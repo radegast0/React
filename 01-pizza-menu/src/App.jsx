@@ -39,7 +39,7 @@ const pizzaData = [
     ingredients: "Tomato, mozarella, ham, aragula, and burrata cheese",
     price: 18,
     photoName: "pizzas/prosciutto.jpg",
-    soldOut: false,
+    soldOut: true,
   },
 ];
 
@@ -70,14 +70,19 @@ function Menu() {
     </div>
   );
 }
-function Pizza(props) {
+function Pizza({ pizzaObj }) {
   return (
     <li className="pizza">
-      <img src={props.pizzaObj.photoName} />
+      <img src={pizzaObj.photoName} />
       <div>
-        <h2>{props.pizzaObj.name}</h2>
-        <p>{props.pizzaObj.ingredients}</p>
-        <p>{props.pizzaObj.price}</p>
+        <h2>{pizzaObj.name}</h2>
+        <p>{pizzaObj.ingredients}</p>
+        {/* {pizzaObj.soldOut ? (
+          <span>SOLD OUT</span>
+        ) : (
+          <span>{pizzaObj.price}</span>
+        )} */}
+        <span>{pizzaObj.soldOut ? 'SOLD OUT' : pizzaObj.price}</span>
       </div>
     </li>
   );

@@ -9,10 +9,7 @@ function App() {
     <div className='container'>
       <Photo photoName='fatih.jpg' />
       <Title title='Fatih' />
-      <div>
-        <Skills className='skill1' skill='JavaScript'/>
-        <Skills className='skill2' skill='React'/>
-      </div>
+      <Skills />
     </div>
   )
 }

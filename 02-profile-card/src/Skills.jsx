@@ -1,12 +1,19 @@
-import React from 'react'
-import './Skills.css'
+import React from 'react';
+import './Skills.css';
+import skills from './data';
 
-const Skills = (props) => {
+const Skills = () => {
+  const skillButtons = skills.map((everySkill) => (
+    everySkill.level === 'advanced' ? (
+      <button className='skill' key={everySkill.skill} style={{ backgroundColor: everySkill.color }}> {everySkill.skill} </button>
+    ) : null
+  ));
+
   return (
-    <button className={props.className}>
-        {props.skill}
-    </button>
-  )
+    <div>
+      {skillButtons}
+    </div>
+  );
 }
 
-export default Skills
+export default Skills;
